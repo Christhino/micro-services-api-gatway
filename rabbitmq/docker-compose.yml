@@ -3,6 +3,12 @@ services:
   rabbitmq:
     image: "rabbitmq:3-management"
     container_name: 'RabbitMQ'
+    # env:
+    #   - name: RABBITMQ_ERLANG_COOKIE
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: rabbitmq
+    #         key: erlangCookie
     environment:
       RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
       RABBITMQ_DEFAULT_USER: "rabbitmq"
@@ -23,3 +29,4 @@ services:
 networks:
   rabbitmq_go_net:
     driver: bridge
+
